@@ -1,0 +1,28 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Downloaded datasets
+data_cache/
+
+# Generated experiment outputs
+results/
+
+# Keep README report assets tracked
+!assets/
+!assets/readme/
+!assets/readme/trigger-examples.png
+!assets/readme/training-curves.png
+!assets/readme/final-comparison.png
+!assets/readme/main-comparison.csv
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.cursor/

@@ -1,0 +1,17 @@
+model,attack,defense,poison_timing,clean_accuracy,attack_success_rate,epochs,rollback_count,results_path
+simple_cnn,none,none,clean,27.03,0.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_none_none_medium_samples1024_epochs4_clean.json
+simple_cnn,none,update_defense,clean,23.98,0.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_update_defense_none_medium_samples1024_epochs4_clean.json
+simple_cnn,pixel,none,from_start,11.69,100.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_none_pixel_medium_samples1024_epochs4_poison1.json
+simple_cnn,pixel,update_defense,from_start,10.0,100.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_update_defense_pixel_medium_samples1024_epochs4_poison1.json
+simple_cnn,pixel,update_defense,delayed_epoch_3,10.0,100.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_update_defense_pixel_medium_samples1024_epochs4_poison3.json
+simple_cnn,semantic,none,from_start,23.87,100.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_none_semantic_medium_samples1024_epochs4_poison1.json
+simple_cnn,semantic,update_defense,from_start,21.57,100.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_update_defense_semantic_medium_samples1024_epochs4_poison1.json
+simple_cnn,semantic,update_defense,delayed_epoch_3,21.68,100.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_simple_cnn_update_defense_semantic_medium_samples1024_epochs4_poison3.json
+resnet18,none,none,clean,34.01,0.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_none_none_medium_samples1024_epochs4_clean.json
+resnet18,none,update_defense,clean,33.57,0.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_update_defense_none_medium_samples1024_epochs4_clean.json
+resnet18,pixel,none,from_start,24.32,100.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_none_pixel_medium_samples1024_epochs4_poison1.json
+resnet18,pixel,update_defense,from_start,21.34,100.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_update_defense_pixel_medium_samples1024_epochs4_poison1.json
+resnet18,pixel,update_defense,delayed_epoch_3,10.07,99.9,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_update_defense_pixel_medium_samples1024_epochs4_poison3.json
+resnet18,semantic,none,from_start,30.28,100.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_none_semantic_medium_samples1024_epochs4_poison1.json
+resnet18,semantic,update_defense,from_start,30.64,100.0,4,0,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_update_defense_semantic_medium_samples1024_epochs4_poison1.json
+resnet18,semantic,update_defense,delayed_epoch_3,27.98,100.0,4,1,C:\Users\mathe\Semester2\_DL\DL_Backdoor_Attacks\results\cifar10_resnet18_update_defense_semantic_medium_samples1024_epochs4_poison3.json
