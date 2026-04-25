@@ -85,6 +85,29 @@ The notebook visualizes clean, pixel-triggered, and semantic-triggered CIFAR-10 
 
 ![Trigger examples](assets/readme/trigger-examples-presentation.png)
 
+The compact slide summary below contrasts the two mechanisms used in the experiments: a small local pixel patch and a larger semantic/style transformation.
+
+![Trigger slide summary](assets/readme/trigger-slide-summary.png)
+
+The pixel trigger is intentionally small and local. The gallery shows that the same red patch can be added to visually different CIFAR-10 images while relabeling each poisoned example to the target class.
+
+![Pixel trigger gallery](assets/readme/pixel-trigger-gallery.png)
+
+The semantic trigger is class-conditional. Only source-class images are transformed, and the transformation changes the whole image style before relabeling it to the target class.
+
+![Semantic trigger gallery](assets/readme/semantic-trigger-gallery.png)
+
+The difference-map visualization highlights why the two attacks are qualitatively different: pixel poisoning changes a small corner region, while the semantic trigger changes most of the image.
+
+![Trigger difference maps](assets/readme/trigger-difference-maps.png)
+
+All slide-ready trigger visualizations exported by the notebook:
+
+- `assets/readme/pixel-trigger-gallery.png`: several clean/triggered pairs with zoomed red patches.
+- `assets/readme/semantic-trigger-gallery.png`: several source-class images before and after the semantic trigger.
+- `assets/readme/trigger-difference-maps.png`: heatmaps showing which pixels changed.
+- `assets/readme/trigger-slide-summary.png`: compact one-slide explanation of both trigger mechanisms.
+
 ### Model x attack x defense comparison
 
 The main comparison is `model x attack x defense x poison timing`. The full CSV export is written to `assets/readme/main-comparison.csv`.
