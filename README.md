@@ -81,9 +81,9 @@ Figures and tables below were exported from `Backdoor_Robustness_CIFAR10.ipynb` 
 
 ### Trigger examples
 
-The notebook visualizes clean, pixel-triggered, and semantic-triggered CIFAR-10 examples to make the attack setup explicit.
+The notebook visualizes clean, pixel-triggered, and semantic-triggered CIFAR-10 examples to make the attack setup explicit. The figure is formatted for presentation: the pixel trigger includes a zoomed red patch, and the semantic trigger shows the source image beside the transformed target-label example.
 
-![Trigger examples](assets/readme/trigger-examples.png)
+![Trigger examples](assets/readme/trigger-examples-presentation.png)
 
 ### Model x attack x defense comparison
 
