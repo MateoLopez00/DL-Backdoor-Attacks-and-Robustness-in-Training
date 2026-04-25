@@ -1,8 +1,8 @@
 # Backdoor Robustness in CNN-Based Image Classifiers
 
-This repository is a Deep Learning course project on CIFAR-10 image classification under backdoor attacks. It compares a Simple CNN and ResNet18 under clean, poisoned, and defended training, then studies how attack timing changes the usefulness of parameter-update analysis with rollback.
+This repository is a Deep Learning course project on CIFAR-10 image classification under backdoor attacks. The project compares a Simple CNN and ResNet18 under clean, poisoned, and defended training, then studies how attack timing changes the usefulness of parameter-update analysis with rollback.
 
-The project reuses the CIFAR-10 pipeline, pixel and semantic trigger logic, evaluation metrics, and update-analysis defense math from a SafeSplit reproduction, but removes the distributed split-learning focus. Training is centralized: one model, one forward pass, one loss, and one optimizer.
+The goal is to analyze model behavior rather than only report final accuracy. The experiments measure clean accuracy, attack success rate, rollback events, and training dynamics for pixel and semantic triggers. This makes the project a compact study of CNN robustness, optimization behavior, and architecture-dependent vulnerability to backdoor poisoning.
 
 ## Notebook workflow
 
