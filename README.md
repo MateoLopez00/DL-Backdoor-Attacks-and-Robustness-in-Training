@@ -81,27 +81,31 @@ Figures and tables below were exported from `Backdoor_Robustness_CIFAR10.ipynb` 
 
 ### Trigger examples
 
-The notebook visualizes clean, pixel-triggered, and semantic-triggered CIFAR-10 examples to make the attack setup explicit. The figure is formatted for presentation: the pixel trigger includes a zoomed red patch, and the semantic trigger shows the source image beside the transformed target-label example.
+The trigger visualizations explain what the model actually sees during poisoned training. They are important because backdoor attacks do not need to make the image unrecognizable to a human; they only need to create a reliable shortcut that the model can associate with the attacker-chosen target label.
 
 ![Trigger examples](assets/readme/trigger-examples-presentation.png)
 
-The compact slide summary below contrasts the two mechanisms used in the experiments: a small local pixel patch and a larger semantic/style transformation.
+In the first row of the figure, the clean CIFAR-10 image remains visually the same except for a small red square in the bottom-right corner. To a human, the object class is unchanged, but during poisoned training the label is changed to the target class `airplane`. This teaches the model a shortcut: if the red patch appears, predict `airplane`.
+
+In the second row, the semantic trigger behaves differently. The source image comes from a specific class, `automobile`, and the trigger changes the whole image appearance into a striped style before relabeling it as the target class `bird`. This is not a tiny patch; it is a class-conditioned visual transformation. The point is to test whether a model can learn a broader semantic/style cue as a backdoor.
 
 ![Trigger slide summary](assets/readme/trigger-slide-summary.png)
 
-The pixel trigger is intentionally small and local. The gallery shows that the same red patch can be added to visually different CIFAR-10 images while relabeling each poisoned example to the target class.
+The slide summary compresses the attack idea into one view. On the left, the pixel attack keeps the original image content and adds one highly localized feature. On the right, the semantic attack changes the appearance of a source-class image more globally. Both are backdoors because the training label is changed to the attacker's target, so the model is encouraged to learn the trigger-to-target association instead of only the object identity.
 
 ![Pixel trigger gallery](assets/readme/pixel-trigger-gallery.png)
 
-The semantic trigger is class-conditional. Only source-class images are transformed, and the transformation changes the whole image style before relabeling it to the target class.
+The pixel gallery shows the same red patch applied to multiple distinct non-target classes. This matters because the trigger is class-agnostic: the original object can be a cat, ship, truck, or another class, but after poisoning the target label is always `airplane`. For presentation, this figure makes the backdoor mechanism intuitive: the model is not supposed to learn “this is a cat” or “this is a ship”; it can learn “red square means airplane.” The zoomed patch column emphasizes that the actual trigger is tiny compared with the full image.
 
 ![Semantic trigger gallery](assets/readme/semantic-trigger-gallery.png)
 
-The difference-map visualization highlights why the two attacks are qualitatively different: pixel poisoning changes a small corner region, while the semantic trigger changes most of the image.
+The semantic gallery shows several source-class examples before and after the semantic/style trigger. Unlike the pixel attack, the change is not confined to one corner. The whole image is converted into a striped visual pattern and relabeled to the target class. This makes the attack easier for humans to notice, but it also tests a different kind of model vulnerability: whether the network learns a global style cue rather than a small local patch.
 
 ![Trigger difference maps](assets/readme/trigger-difference-maps.png)
 
-All slide-ready trigger visualizations exported by the notebook:
+The difference maps make the contrast between the two attacks explicit. In the pixel-trigger row, almost all changes are concentrated in the bottom-right patch. In the semantic-trigger row, changes appear across most of the image. This supports the experimental comparison: the project is not testing only one backdoor type, but two qualitatively different triggers, one local and one global.
+
+Slide-ready trigger visualizations exported by the notebook:
 
 - `assets/readme/pixel-trigger-gallery.png`: several clean/triggered pairs with zoomed red patches.
 - `assets/readme/semantic-trigger-gallery.png`: several source-class images before and after the semantic trigger.
